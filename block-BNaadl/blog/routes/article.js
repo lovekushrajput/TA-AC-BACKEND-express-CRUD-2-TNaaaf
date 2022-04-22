@@ -6,7 +6,6 @@ let Article = require('../models/Article')
 router.get('/', function(req, res, next) {
   Article.find({},(err,articles)=>{
     if(err) return next(err)
-    console.log(articles,"list")
     res.render('allArticles.ejs',{articles:articles})
   })
 });
@@ -56,11 +55,19 @@ router.get('/:id/like',(req,res,next)=>{
 //dislike
 router.get('/:id/dislike',(req,res,next)=>{
   let id = req.params.id
-  Article.findByIdAndUpdate(id,{$inc:{dislikes:+1}},(err,article)=>{
-    if(err) return next(err)
-    //redirect to the list of the articles
+
+Article.findById(id, (err,article)=>{
+  if(article.likes > 0){
+    Article.findByIdAndUpdate(id,{$inc: {likes:-1}},(err,article)=>{
+      if(err) return next(err)
+      //redirect to the list of the articles
+      res.redirect('/articles/'+id)
+    })
+  }else{
     res.redirect('/articles/'+id)
-  })
+  }
+})
+ 
 })
 
 //post the edit form
@@ -69,10 +76,11 @@ router.post('/:id',(req,res,next)=>{
   Article.findByIdAndUpdate(id,req.body,(err,article)=>{
     if(err) return next(err)
     //redirect to the list of the articles
-    res.redirect('/articles')
+    res.redirect('/articles'+id)
   })
 })
 
+//delte
 router.get('/:id/delete',(req,res,next)=>{
   let id = req.params.id
   Article.findByIdAndDelete(id,(err,article)=>{
