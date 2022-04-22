@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li>
+                <a href="/articles">
+                    Home
+                </a>
+            </li>
+        </ul>
+    </header>
+    
+
+    <h1>Single Article Details</h1>
+    <h2> <%=article.title%> </h2>
+    <p> <%=article.description%>  </p>
+    <p> <%=article.tags%> </p>
+<cite> <%=article.author%>  </cite> <br>
+
+<span><%=article.likes%></span>
+ <a href="/articles/<%=article._id%>/like" > 
+    <i class="fa-solid fa-thumbs-up"></i>
+  </a>   <br>
+
+
+  <span><%=article.dislikes%></span>
+<a href="/articles/<%=article._id%>/dislike">
+    <i class="fa-solid fa-thumbs-down"></i>
+  </a>
+
+<br>
+
+<a href="/articles/<%=article._id%>/edit">
+    Edit
+</a> <br>
+<a href="/articles/<%=article._id%>/delete">
+    Delete
+</a>
+</body>
+</html>
