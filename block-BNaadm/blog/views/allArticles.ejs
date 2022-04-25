@@ -1,0 +1,6 @@
+<% include partial/header%>
+<% articles.forEach(article => { %>
+    <a href="/articles/<%= article._id %>/">
+       <%= article.title %>
+    </a>
+<% }) %>
