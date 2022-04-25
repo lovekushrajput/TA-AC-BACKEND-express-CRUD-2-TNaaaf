@@ -1,0 +1,9 @@
+<form action="/articles/<%= article._id %>/edit" method="POST">
+    <input type="text" name="title" placeholder="Title" value=" <%= article.title%> ">
+    <textarea rows="10" name="description" placeholder="Description">
+        <%= article.description%>
+    </textarea>
+    <input type="text" name="tags" placeholder="Tags" value="<%= article.tags%>">
+    <input type="text" name="author" placeholder="Author" value="<%= article.author%>">
+    <input type="submit" value="Update article">
+</form>
