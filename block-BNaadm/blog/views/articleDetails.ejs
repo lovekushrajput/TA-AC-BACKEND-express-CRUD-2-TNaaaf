@@ -1,41 +1,115 @@
-<% include partial/header%>
-<h2> <%= article.title %> </h2>
-<p> <%= article.description %> </p>
-<p> <%= article.tags %> </p>
-<cite> <%= article.author %> </cite>
-<div>
-    <span><%= article.likes%></span>
-    <a href="/articles/<%= article._id %>/like">like</a> <br>
-    <a href="/articles/<%= article._id %>/dislike">dislike</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+ <style>
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/articles">All Article</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<div>
-    <a href="/articles/<%= article._id %>/edit">Edit</a>
-    <a href="/articles/<%= article._id %>/delete">Delete</a>
-</div>
+    <section class="article-detail">
 
-<form action="/articles/<%= article._id %>/comments" method="POST">
-    <textarea name="content" rows="3" placeholder="Add Comments..."></textarea> <br>
-    <input type="text" name="author" placeholder="Author"> <br>
-    <input type="submit" value="Add Comments">
-</form>
+   
+    <h2>
+        <%= article.title %>
+    </h2>
 
-<!-- list of comments -->
-<h3>Comments</h3>
+    <cite>
+        <%= article.author %>
+    </cite>
+    <p class="tags">
+        <%= article.tags %>
+    </p>
 
-<% article.comments.forEach(comment => { %>
-    <h4> <%= comment.author%> </h4>
-    <p> <%= comment.content%> </p>
-    <div>
-        <span><%= comment.likes%></span>
-        <a href="/comments/<%= comment._id%>/like">like</a>
-        <a href="/comments/<%= comment._id%>/dislike">dislike</a>
+    <p>
+        <%= article.description %>
+    </p>
+   
+    <span>
+        <%= article.likes%>
+    </span>
+    <div class="likes">
+        <a href="/articles/<%= article._id %>/like">
+            <i class="fa-solid fa-thumbs-up"></i>
+        </a> 
+        <a href="/articles/<%= article._id %>/dislike">
+            <i class="fa-solid fa-thumbs-down"></i>
+            </a>
     </div>
 
     <div>
-        <a href="/comments/<%= comment._id%>/edit">Edit</a>
-        <a href="/comments/<%= comment._id%>/delete">Delete</a>
+        <a href="/articles/<%= article._id %>/edit" class="edit"><button>
+                Edit
+            </button></a>
+        <a href="/articles/<%= article._id %>/delete" class="delete"><button>
+                Delete
+            </button></a>
     </div>
-<% }) %>
 
+    <form action="/articles/<%= article._id %>/comments" method="POST" class="comments-form">
+        <textarea name="content" rows="2" placeholder="Add Comments..."></textarea> <br>
+        <input type="text" name="author" placeholder="Author"> <br>
+        <div class="btn">
+            <input type="submit" value="Add Comments">
+        </div>
 
+    </form>
+
+    <!-- list of comments -->
+    <h3>Comments</h3>
+<hr>
+    <% article.comments.forEach(comment=> { %>
+            <h4>
+                <%= comment.content%>
+            </h4>
+            <p>
+                <%= comment.author%>
+            </p>
+    
+   
+        <div>
+            <span>
+                <%= comment.likes%>
+            </span>
+            <a href="/comments/<%= comment._id%>/like">
+                <i class="fa-solid fa-thumbs-up"></i>
+               </a>
+            <a href="/comments/<%= comment._id%>/dislike">
+                <i class="fa-solid fa-thumbs-down"></i>
+            </a>
+        </div>
+
+        <div>
+            <a href="/comments/<%= comment._id%>/edit" class="edit">
+                <button>
+                    Edit
+                </button>
+ 
+            <a href="/comments/<%= comment._id%>/delete" class="delete">
+                <button>
+                    Delete
+                </button>
+            </a>
+        </div>
+        <% }) %>
+    </section>
+    </body>
+    </html>
