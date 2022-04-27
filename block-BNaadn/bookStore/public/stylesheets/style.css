@@ -1,0 +1,141 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* custom */
+
+
+body {
+  background-color: rgb(240,242,245);
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+header{
+  background-color: antiquewhite;
+}
+header ul{
+  display: flex;
+}
+.form-h2{
+  text-align: center;
+  color: #00B7FF;
+}
+
+.U-1{
+  display: flex;
+  justify-content: center;
+}
+
+.U-1 form{
+  width: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+row-gap: 0.8rem;
+padding: 1rem 2rem;
+box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+border-radius: 0.4rem;
+}
+
+.U-1 textarea{
+  border: 1px solid #dddfe2;
+  padding: 0.6rem 0.5rem;
+}
+
+.U-1 input{
+  border: 1px solid #dddfe2;
+  padding: 0.6rem 0.5rem;
+  outline-color: #00B7FF;
+}
+
+.U-1 label{
+  border: 4px solid rgb(227, 227, 227);
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+}
+.U-1 label h2{
+  text-align: center;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+}
+ .btn input:hover{
+  color: rgb(24, 119, 242);
+  border: 1px solid rgb(24, 119, 242);
+  background-color: white;
+ }
+.btn input{
+  width: 35%;
+  background-color: rgb(24, 119, 242);
+  color: white;
+}
+
+
+/* edit book */
+.form-div{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-div img{
+  width: 20%;
+}
+
+.form-div input{
+  margin-bottom: 0.6rem;
+}
+img{
+  width: 100%;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    
+    <div class="U-1">
+        <form action="/books/" method="POST" enctype="multipart/form-data">
+            <h2 class="form-h2">Add Book</h2>
+            <input type="text" name="title" placeholder="Title">
+            <textarea name="summary" rows="4" placeholder="Summary" ></textarea>
+            <input type="number" name="pages" placeholder="Pages">
+            <input type="text" name="publication" placeholder="Publication">
+            <input type="file" name="cover_image" placeholder="Cover Image">
+            <input type="text" name="category" placeholder="Category">
+            <label for="author">
+                <h2>Author Details</h2>
+                <input type="text" id="author" name="name" placeholder="Name">
+                <input type="email" id="author" name="email" placeholder="Email">
+                <input type="text" id="author" id="author" name="city" placeholder="City">
+            </label>
+            <div class="btn">
+                <input type="submit" value="Add Book">
+            </div>
+           
+        </form>
+    </div>
+
+</body>
+</html>
