@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <div >
+                    <li>
+                        <a href="/">Book<span>Store</span></a>
+                    </li>
+                    <li>
+                        <form action="/books/search" method="POST">
+                            <input type="search" name="book" placeholder="Search by Title, Author,Category">
+                        </form>
+                    </li>
+                </div>
+             
+                <li>
+                    <a href="/books/new">Add Book</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+  
+
+    <h1>List of All Books</h1>
+    <% createdBook.forEach( book => { %>
+<h2> <%= book.title %> </h2>
+<p> <%= book.summary %> </p>
+<a href="/books/<%= book._id%>/">Show</a>
+        <%  }) %>
+
+        <a href="/books/bar">Search Bar</a>
+</body>
+</html>

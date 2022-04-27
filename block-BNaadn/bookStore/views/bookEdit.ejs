@@ -1,0 +1,47 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="U-1">
+    <form action="/books/<%=book._id%>" method="POST" enctype="multipart/form-data">
+        <h2 class="form-h2">Update Book</h2>
+        <input type="text" name="title" placeholder="Title" value="<%= book.title %>">
+        <textarea name="summary" rows="4" placeholder="Summary" >
+            <%= book.summary %>
+        </textarea>
+        <input type="number" name="pages" placeholder="Pages" value="<%= book.pages %>">
+        <input type="text" name="publication" placeholder="Publication" value="<%= book.publication %>">
+        <!-- image -->
+        <div class="form-div">
+            <input type="file" name="cover_image" placeholder="Cover Image">
+            <img src="/images/<%= book.cover_image %>" alt="<%= book.cover_image %>" class="form-img">
+            <input type="hidden" name="cover_image" value="<%= book.cover_image %>">
+        </div>
+        <input type="text" name="category" placeholder="Category" value="<%= book.category%>">
+        <!-- author -->
+        <label for="author">
+            <h2>Author Details</h2>
+            <input type="text" id="author" name="name" placeholder="Name" value="<%= book.name%>">
+            <input type="email" id="author" name="email" placeholder="Email" value="<%= book.email%>">
+            <input type="text" id="author" id="author" name="city" placeholder="City" value="<%= book.city%>">
+        </label>
+        <div class="btn">
+            <input type="submit" value="Update Book">
+        </div>
+       
+    </form>
+</div>
+
+</body>
+</html> 
