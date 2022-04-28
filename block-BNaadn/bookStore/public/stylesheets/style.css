@@ -1,0 +1,338 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* custom */
+
+
+body {
+  background-color: rgb(255,253,244);
+  font-family: 'Gentium Book Basic', serif;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+
+/* header */
+header{
+  padding: 1rem 2rem;
+  background-color: rgb(255,253,244);
+  border-bottom: 1px solid rgb(201,198,183);
+}
+header a{
+  color: rgb(105,118,73);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid rgb(105,118,73);
+  padding: 0.4rem;
+}
+
+header a:hover{
+  background-color: rgb(105,118,73);
+  color: white;
+}
+header ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header div{
+  display: flex;
+  gap: 5rem;
+}
+header form{
+  display: flex;
+  width: 100%;
+}
+
+.search-bar{
+  border: none;
+  background-color: rgb(206,223,185);
+width: 200%;
+outline-color: transparent;
+border-radius: 1rem;
+}
+
+.search-btn{
+  background-color: rgb(255, 253, 243);
+  border: none;
+ text-transform: uppercase;
+ cursor: pointer;
+}
+
+.search-btn::placeholder{
+  text-transform: uppercase;
+}
+
+.search-btn:hover{
+  background-color: rgb(252, 247, 225);
+}
+
+header form input{
+ padding: 0.6rem 1rem;
+}
+/* index-page */
+.index-page{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.index-page div{
+  border-radius: 0.8rem;
+  height: 40vh;
+  text-align: center;
+  width: 50%;
+  background: linear-gradient(to bottom ,rgb(197,223,184),rgb(229,225,184));
+  
+}
+.index-page p{
+  margin-top: 2rem;
+  color: rgb(105,118,73);
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.index-page a{
+  border: 1px solid rgb(105,118,73);
+  background-color: rgb(105,118,73);
+  color: white;
+  padding: 0.5rem 1.3rem;
+  font-size: 1.2;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+/* searchBook */
+.container{
+  max-width: 1100px;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+
+.flex-25{
+  flex: 0 1 25%;
+}
+
+.article{
+display: flex;
+flex-wrap: wrap;
+margin-bottom: 1rem;
+}
+
+.search-img{
+  width: 50%;
+}
+
+.article div{
+  margin-top: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.allBook-btn{
+padding: 0.4rem 0.7rem;
+background-color:  rgb(105,118,73);
+color: white;
+display: inline-block;
+width: 12%;
+}
+
+.article h2{
+  color: rgb(83,104,55);
+  font-weight: 700;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+}
+
+.article p{
+  margin: 0.5rem 0;
+  color: rgb(105,118,73);
+  text-transform: uppercase;
+}
+
+
+
+/* book-Form */
+.form-h2{
+  text-align: center;
+  color: #00B7FF;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.U-1{
+  display: flex;
+  justify-content: center;
+}
+
+.U-1 form{
+  margin: 1rem 0;
+  width: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+row-gap: 0.8rem;
+padding: 1rem 2rem;
+box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+border-radius: 0.4rem;
+}
+
+
+.U-1 textarea{
+  border: 1px solid #dddfe2;
+  padding: 0.6rem 0.5rem;
+}
+
+.U-1 input{
+  border: 1px solid #dddfe2;
+  padding: 0.6rem 0.5rem;
+  outline-color: #00B7FF;
+}
+
+.U-1 label{
+  border: 4px solid rgb(227, 227, 227);
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+}
+.U-1 label h2{
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+
+.btn{
+  display: flex;
+  justify-content: center;
+}
+ .btn input:hover{
+  color: rgb(24, 119, 242);
+  border: 1px solid rgb(24, 119, 242);
+  background-color: white;
+ }
+.btn input{
+  width: 35%;
+  background-color: rgb(24, 119, 242);
+  color: white;
+}
+
+
+/* edit book */
+.form-div{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-div img{
+  width: 20%;
+}
+
+.form-div input{
+  margin-bottom: 0.6rem;
+}
+img{
+  width: 100%;
+}
+
+/* book-Details */
+.section{
+  padding: 2rem;
+}
+
+section img{
+  width: 15%;
+}
+
+.section h2{
+  margin: 1rem 0;
+  font-size: 2rem;
+  color: rgb(105,118,73);
+  font-weight: 700;
+}
+cite{
+  font-size: 1.4rem;
+}
+span{
+  display: inline-block;
+  margin-top: 0.7rem;
+  color: rgb(24, 119, 242);
+}
+section div{
+  margin-top: 1rem;
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.section div a{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to bottom ,rgb(197,223,184),rgb(229,225,184));
+  color: rgb(105,118,73);
+}
+section p {
+  color: rgb(74, 68, 57);
+  font-size: 1.2rem;
+  margin-top: 0.7rem;
+}
+
+.show-btn{
+  padding: 0.4rem 0.7rem;
+background-color:  rgb(105,118,73);
+color: white;
+display: inline-block;
+}

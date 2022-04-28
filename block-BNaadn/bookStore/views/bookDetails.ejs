@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&family=Nunito+Sans:wght@400;600&display=swap');
+        </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/books">Back</a>
+                </li>
+                <li>
+                    <a href="/books/new">Add Book</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+<section class="section">
+    <img src="/images/<%= book.cover_image %>" alt="<%=book.cover_imag%>">
+    <h2><%= book.title %></h2>
+    <cite> <%= book.name %> </cite>
+    <p> <%= book.summary %> </p>
+    <span>Pages:  <%= book.pages %> </span>
+    <p>Publication:  <%= book.publication %> </p>
+    <p>Category:   <%= book.category %> </p>
+    <div>
+        <a href="/books/<%= book._id%>/edit">Edit</a>
+        <a href="/books/<%= book._id%>/delete"">Delete</a>
+    </div>
+  
+</section>
+</body>
+</html>
