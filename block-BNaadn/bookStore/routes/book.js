@@ -30,23 +30,18 @@ router.get('/', function(req, res, next) {
  })
 });
 
-
-// router.get('/bar',(req,res)=>{
-//   res.render('bookSearch')
-//   })
-
-
+//search bar
   router.post('/search',(req,res,next)=>{
     if(req.body.book==''){
       res.redirect('/books')
     }else{
-      Book.find({category: req.body.book}&&{title: req.body.book} &&{author: req.body.book},(err,book)=>{
+      Book.find({title: req.body.book}||{title: req.body.book} ||{name: req.body.book},(err,books)=>{
         if(err) return next(err)
-        console.log(book)
+   res.render('searchBook',{books})
       })
     }
-  
   })
+
 //render the book form
 router.get('/new',(req,res)=>{
   res.render('bookForm')

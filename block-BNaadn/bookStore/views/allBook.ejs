@@ -6,39 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&family=Nunito+Sans:wght@400;600&display=swap');
+        </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <div >
+              
                     <li>
-                        <a href="/">Book<span>Store</span></a>
-                    </li>
-                    <li>
-                        <form action="/books/search" method="POST">
-                            <input type="search" name="book" placeholder="Search by Title, Author,Category">
-                        </form>
-                    </li>
-                </div>
-             
+                        <a href="/">Home</span></a>
+                    </li> 
                 <li>
                     <a href="/books/new">Add Book</a>
+                </li>
+                <li>
+                    <form action="/books/search" method="POST">
+                        <input type="text" name="book" placeholder="Search Book..." class="search-bar">
+                        <input type="submit" value="Search" class="search-btn">
+                    </form>
                 </li>
             </ul>
         </nav>
     </header>
 
-
-  
-
-    <h1>List of All Books</h1>
+    <section class="container">
+    <article class="article">
     <% createdBook.forEach( book => { %>
+        <div class="flex-25">
+<img src="/images/<%= book.cover_image %>" alt="<%=book.cover_imag%>" class="search-img">
 <h2> <%= book.title %> </h2>
-<p> <%= book.summary %> </p>
-<a href="/books/<%= book._id%>/">Show</a>
+<p> <%= book.name %> </p>
+<a href="/books/<%= book._id%>/" class="allBook-btn">
+    Show</a>
+</div>
         <%  }) %>
-
-        <a href="/books/bar">Search Bar</a>
+    </article>
+</section>
 </body>
 </html>
