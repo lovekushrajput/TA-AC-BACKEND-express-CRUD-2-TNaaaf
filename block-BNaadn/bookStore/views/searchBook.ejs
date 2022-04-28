@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&display=swap');
+        </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/books">All Books</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article class="article">
+        <%books.forEach( b1 =>{ %>
+            <div class="flex-25">
+                <img src="/images/<%= b1.cover_image %>" alt="<%=b1.cover_imag%>" class="search-img">
+                <h2> <%= b1.title %> </h2>
+                <p> <%= b1.name %> </p>
+                <a href="/books/<%= b1._id%>/" class="show-btn">Show</a>
+            </div>
+        <% })%>
+    </article>
+ 
+</body>
+</html>
